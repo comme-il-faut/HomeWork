@@ -17,43 +17,72 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Значение счётчика: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAA-ek-oCv">
-                                <rect key="frame" x="96.666666666666686" y="431.33333333333331" width="200" height="21.666666666666686"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="lUC-7r-lCr"/>
-                                </constraints>
+                                <rect key="frame" x="105.66666666666669" y="415.33333333333331" width="181.66666666666663" height="21.666666666666686"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zu-Qb-EiE">
-                                <rect key="frame" x="96.666666666666686" y="753" width="200" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="joe-Ar-nuq"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Plus 1"/>
-                                <connections>
-                                    <action selector="changeValueCounterPlusOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GyK-PN-TED"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ZQG-Lt-DIA">
+                                <rect key="frame" x="96.666666666666686" y="537" width="200" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xb-wq-7sn">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="7Gv-rt-ggR"/>
+                                            <constraint firstAttribute="width" secondItem="8xb-wq-7sn" secondAttribute="height" multiplier="1:1" id="ffT-Rj-llF"/>
+                                            <constraint firstAttribute="height" constant="50" id="nCj-Iy-3zv"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="-"/>
+                                        <connections>
+                                            <action selector="changeValueCounterMinusOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mY5-Yr-dyK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JhN-be-QI9">
+                                        <rect key="frame" x="74.999999999999986" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="JhN-be-QI9" secondAttribute="height" multiplier="1:1" id="eAX-0M-AM0"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="0"/>
+                                        <connections>
+                                            <action selector="changeValueCounterMinusOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Sf-c9-tPU"/>
+                                            <action selector="changeValueCounterZero:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eXm-7M-lYv"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Zu-Qb-EiE">
+                                        <rect key="frame" x="150" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="5Zu-Qb-EiE" secondAttribute="height" multiplier="1:1" id="x0F-OM-BFJ"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="+"/>
+                                        <connections>
+                                            <action selector="changeValueCounterPlusOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GyK-PN-TED"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5Zu-Qb-EiE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7kX-HC-cUo"/>
-                            <constraint firstItem="jAA-ek-oCv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="J2V-2H-iHG"/>
-                            <constraint firstItem="5Zu-Qb-EiE" firstAttribute="top" secondItem="jAA-ek-oCv" secondAttribute="bottom" constant="300" id="him-3y-nYm"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5Zu-Qb-EiE" secondAttribute="bottom" constant="30" id="lOs-FI-KEQ"/>
+                            <constraint firstItem="ZQG-Lt-DIA" firstAttribute="top" secondItem="jAA-ek-oCv" secondAttribute="bottom" constant="100" id="Lpy-Fb-6pa"/>
+                            <constraint firstItem="jAA-ek-oCv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PtM-ou-mJz"/>
+                            <constraint firstItem="ZQG-Lt-DIA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Sta-b7-xb1"/>
+                            <constraint firstItem="jAA-ek-oCv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bvH-g6-BCe"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="minusOneButton" destination="8xb-wq-7sn" id="L0H-YS-xcS"/>
                         <outlet property="plusOneButton" destination="5Zu-Qb-EiE" id="uec-or-nDU"/>
                         <outlet property="valueCounterLabel" destination="jAA-ek-oCv" id="nh6-Et-DgU"/>
+                        <outlet property="zeroButton" destination="JhN-be-QI9" id="HF9-aR-RXH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="4"/>
+            <point key="canvasLocation" x="139.69465648854961" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
