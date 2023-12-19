@@ -13,6 +13,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var plusOneButton: UIButton!
     @IBOutlet weak var valueCounterLabel: UILabel!
+    @IBOutlet weak var minusOneButton: UIButton!
+    @IBOutlet weak var zeroButton: UIButton!
+    
     
     var counter = 0 {
         didSet{
@@ -29,5 +32,17 @@ class ViewController: UIViewController {
         counter += 1
     }
     
+    
+    @IBAction func changeValueCounterMinusOne(_ sender: UIButton) {
+        if counter == 0 {
+            counter = 0
+        } else {
+            counter -= 1
+        }
+    }
+    
+    @IBAction func changeValueCounterZero(_ sender: UIButton) {
+        counter = 0
+    }
 }
 
