@@ -17,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Значение счётчика: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAA-ek-oCv">
-                                <rect key="frame" x="105.66666666666669" y="415.33333333333331" width="181.66666666666663" height="21.666666666666686"/>
+                                <rect key="frame" x="105.66666666666667" y="532" width="181.66666666666663" height="21.666666666666629"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ZQG-Lt-DIA">
-                                <rect key="frame" x="96.666666666666686" y="537" width="200" height="50"/>
+                                <rect key="frame" x="96.666666666666686" y="629" width="200" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xb-wq-7sn">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -35,7 +35,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="-"/>
                                         <connections>
-                                            <action selector="changeValueCounterMinusOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mY5-Yr-dyK"/>
+                                            <action selector="changeValueCounterMinusOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dDJ-O6-03e"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JhN-be-QI9">
@@ -43,10 +43,10 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="JhN-be-QI9" secondAttribute="height" multiplier="1:1" id="eAX-0M-AM0"/>
                                         </constraints>
+                                        <color key="tintColor" systemColor="opaqueSeparatorColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="0"/>
                                         <connections>
-                                            <action selector="changeValueCounterMinusOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Sf-c9-tPU"/>
                                             <action selector="changeValueCounterZero:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eXm-7M-lYv"/>
                                         </connections>
                                     </button>
@@ -55,6 +55,7 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="5Zu-Qb-EiE" secondAttribute="height" multiplier="1:1" id="x0F-OM-BFJ"/>
                                         </constraints>
+                                        <color key="tintColor" red="1" green="0.0" blue="0.01666666667" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="+"/>
                                         <connections>
@@ -63,17 +64,32 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="История изменений:" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JSe-In-uzJ">
+                                <rect key="frame" x="20" y="182" width="353" height="315"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="353" id="TDi-4T-w9l"/>
+                                    <constraint firstAttribute="height" constant="315" id="zZX-qo-0Nv"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZQG-Lt-DIA" firstAttribute="top" secondItem="jAA-ek-oCv" secondAttribute="bottom" constant="100" id="Lpy-Fb-6pa"/>
+                            <constraint firstItem="ZQG-Lt-DIA" firstAttribute="top" secondItem="jAA-ek-oCv" secondAttribute="bottom" constant="75.333333333333258" id="3XP-14-Gkx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JSe-In-uzJ" secondAttribute="trailing" constant="20" id="D3U-n6-Lk8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZQG-Lt-DIA" secondAttribute="bottom" constant="139" id="FdW-aY-S4o"/>
                             <constraint firstItem="jAA-ek-oCv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PtM-ou-mJz"/>
                             <constraint firstItem="ZQG-Lt-DIA" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Sta-b7-xb1"/>
-                            <constraint firstItem="jAA-ek-oCv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bvH-g6-BCe"/>
+                            <constraint firstItem="JSe-In-uzJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="WTA-DK-rxE"/>
+                            <constraint firstItem="JSe-In-uzJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="123" id="cQs-rA-jUD"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="historyTextView" destination="JSe-In-uzJ" id="KxM-Pt-hYO"/>
                         <outlet property="minusOneButton" destination="8xb-wq-7sn" id="L0H-YS-xcS"/>
                         <outlet property="plusOneButton" destination="5Zu-Qb-EiE" id="uec-or-nDU"/>
                         <outlet property="valueCounterLabel" destination="jAA-ek-oCv" id="nh6-Et-DgU"/>
@@ -86,6 +102,12 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

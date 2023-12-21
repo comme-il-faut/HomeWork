@@ -8,41 +8,48 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     
-    
-    @IBOutlet weak var plusOneButton: UIButton!
-    @IBOutlet weak var valueCounterLabel: UILabel!
-    @IBOutlet weak var minusOneButton: UIButton!
-    @IBOutlet weak var zeroButton: UIButton!
-    
-    
-    var counter = 0 {
+    private var counter = 0 {
         didSet{
             valueCounterLabel.text = "Значение счётчика: \(counter)"
         }
     }
     
+    private var currentDataAndTime: String {
+        let currentDate = Date()
+        let date = DateFormatter()
+        date.dateStyle = .short
+        date.timeStyle = .medium
+        return "\(date.string(from: currentDate))"
+    }
+    
+    @IBOutlet weak private var plusOneButton: UIButton!
+    @IBOutlet weak private var valueCounterLabel: UILabel!
+    @IBOutlet weak private var minusOneButton: UIButton!
+    @IBOutlet weak private var zeroButton: UIButton!
+    @IBOutlet weak private var historyTextView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        historyTextView.text = "\nИстория изменений:"
     }
-
-    @IBAction func changeValueCounterPlusOne(_ sender: Any) {
+    
+    @IBAction private func changeValueCounterPlusOne(_ sender: Any) {
         counter += 1
+        historyTextView.text = "[\(currentDataAndTime)]: Значение изменено на +1\n" + historyTextView.text
     }
     
-    
-    @IBAction func changeValueCounterMinusOne(_ sender: UIButton) {
+    @IBAction private func changeValueCounterMinusOne(_ sender: UIButton) {
         if counter == 0 {
-            counter = 0
+            historyTextView.text = "[\(currentDataAndTime)]: Попытка уменьшить значение счётчика ниже 0\n" + historyTextView.text
         } else {
             counter -= 1
+            historyTextView.text = "[\(currentDataAndTime)]: Значение изменено на -1\n" + historyTextView.text
         }
     }
     
-    @IBAction func changeValueCounterZero(_ sender: UIButton) {
+    @IBAction private func changeValueCounterZero(_ sender: UIButton) {
+        historyTextView.text = "[\(currentDataAndTime)]: Значение сброшено\n" + historyTextView.text
         counter = 0
     }
 }
-
